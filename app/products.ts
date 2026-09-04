@@ -92,7 +92,7 @@ export const products: Product[] = [
   }
 ];
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://testdeploy.example.com";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://testdeploy.poornishachandrasekar.workers.dev";
 
 export function getProduct(slug: string) {
   return products.find((product) => product.slug === slug);
