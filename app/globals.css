@@ -22,7 +22,7 @@ h1 { max-width: 10ch; margin-bottom: 0; color: #10233f; font-family: 'Space Grot
 .calculator-intro h2 { max-width: 9ch; margin-bottom: 1rem; color: #174b9a; font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
 .calculator-intro > p:not(.section-kicker):not(.disclaimer) { max-width: 20rem; color: #5c6f8c; font-size: 0.9rem; line-height: 1.6; }
 .disclaimer { max-width: 20rem; margin-top: 2.5rem; color: #8495ad; font-size: 0.7rem; line-height: 1.5; }
-.calculator-card { border: 1px solid #b9cbea; border-radius: 0.9rem; background: #fff; padding: 1.6rem; box-shadow: 0 1rem 2.5rem rgba(23, 75, 154, 0.1); }
+.calculator-card { min-width: 0; border: 1px solid #b9cbea; border-radius: 0.9rem; background: #fff; padding: 1.6rem; box-shadow: 0 1rem 2.5rem rgba(23, 75, 154, 0.1); }
 .calculator-card-heading { display: flex; justify-content: space-between; align-items: start; gap: 1rem; margin-bottom: 1.4rem; }
 .card-label { margin: 0 0 0.3rem; color: #10233f; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; }
 .calculator-card-heading p:last-child { margin: 0; color: #8495ad; font-size: 0.75rem; }
@@ -30,16 +30,18 @@ h1 { max-width: 10ch; margin-bottom: 0; color: #10233f; font-family: 'Space Grot
 .live-pill i { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: #0a8e78; }
 .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .input-grid label { color: #5c6f8c; font-size: 0.72rem; font-weight: 600; }
-.input-grid input, .input-grid select { display: block; width: 100%; border: 1px solid #c8d6ee; border-radius: 0.35rem; background: #f7faff; color: #10233f; margin-top: 0.4rem; padding: 0.7rem; font: inherit; outline: none; }
+.input-grid input, .input-grid select { display: block; width: 100%; min-width: 0; border: 1px solid #c8d6ee; border-radius: 0.35rem; background: #f7faff; color: #10233f; margin-top: 0.4rem; padding: 0.7rem; font: inherit; outline: none; }
 .input-grid input:focus, .input-grid select:focus { border-color: #174b9a; box-shadow: 0 0 0 3px #dce8ff; }
 .input-grid small { display: block; margin-top: 0.3rem; color: #8495ad; font-size: 0.65rem; font-weight: 400; }
 .take-home { margin: 1.5rem 0; border-radius: 0.6rem; background: #174b9a; padding: 1.2rem 1.4rem; }
 .take-home p, .take-home span { display: block; margin: 0; color: #cfe0ff; font-size: 0.72rem; }
-.take-home strong { display: block; margin: 0.25rem 0; color: #b9f5e5; font-family: 'Space Grotesk', sans-serif; font-size: 3.3rem; font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+.take-home strong { display: block; margin: 0.25rem 0; overflow-wrap: anywhere; color: #b9f5e5; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.1rem, 5vw, 3.3rem); font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
 .salary-breakup h3 { margin-bottom: 0.5rem; color: #10233f; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
-.salary-breakup > div { display: flex; justify-content: space-between; border-top: 1px solid #e2e9f5; padding: 0.6rem 0; color: #5c6f8c; font-size: 0.78rem; }
+.salary-breakup > div { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid #e2e9f5; padding: 0.6rem 0; color: #5c6f8c; font-size: 0.78rem; }
 .salary-breakup strong { color: #10233f; font-weight: 600; }
 .salary-breakup .deduction { color: #e05d47; }
+.tax-status { border: 1px solid #b9eadf; border-radius: 0.45rem; background: #effcf8; padding: 0.7rem 0.8rem; color: #087764; font-size: 0.72rem; line-height: 1.4; }
+.tax-status span { margin-right: 0.35rem; font-weight: 700; }
 .text-page { max-width: 62rem; padding: 6rem 0 4rem; }
 .text-page h1 { max-width: 11ch; }
 .page-lede { max-width: 32rem; margin: 2rem 0 5rem; color: #5c6f8c; font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; line-height: 1.4; }
@@ -59,7 +61,7 @@ h1 { max-width: 10ch; margin-bottom: 0; color: #10233f; font-family: 'Space Grot
 .guide-list article p { margin: 0.7rem 0 0; color: #5c6f8c; font-size: 0.82rem; line-height: 1.6; }
 .about-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 42rem; margin-left: auto; }
 .about-copy p { color: #5c6f8c; font-size: 0.95rem; line-height: 1.7; }
-@media (min-width: 701px) { .home-page { height: 100svh; overflow: hidden; } .home-page .catalog-hero { padding-top: 3.5rem; padding-bottom: 2rem; } .home-page .calculator-wrap { padding-top: 1.7rem; } .home-page .disclaimer { margin-top: 1.5rem; } }
+@media (min-width: 701px) { .home-page .catalog-hero { padding-top: 3.5rem; padding-bottom: 2rem; } .home-page .calculator-wrap { padding-top: 1.7rem; } .home-page .disclaimer { margin-top: 1.5rem; } }
 @media (max-width: 700px) { main { padding: 1rem 1.25rem 3rem; } .site-header { min-height: 3rem; } .brand { font-size: 0.7rem; } .main-nav { gap: 0.8rem; margin-left: auto; margin-right: 0.7rem; font-size: 0.68rem; } .header-cta { display: none; } .catalog-hero { display: block; padding: 3.5rem 0 2rem; } h1 { max-width: 10ch; font-size: 3.5rem; } .catalog-hero .intro { margin-top: 1.5rem; } .benefit-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; } .calculator-wrap { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; } .calculator-intro h2 { font-size: 2.1rem; } .calculator-card { padding: 1.1rem; } .calculator-card-heading { display: block; } .live-pill { display: inline-flex; margin-top: 0.8rem; } .take-home strong { font-size: 2.75rem; } .text-page { padding-top: 4rem; } .page-lede { margin-bottom: 3rem; } .guide-list { grid-template-columns: 1fr; } .about-copy { display: block; margin-left: 0; } }
 /* Legacy shoe theme retained below.
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500;600&display=swap');

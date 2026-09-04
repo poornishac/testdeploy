@@ -22,19 +22,22 @@ function calculateTax(income: number, regime: Regime) {
 }
 
 export default function SalaryCalculator() {
-  const [ctc, setCtc] = useState(1200000);
+  const [ctc, setCtc] = useState(400000);
   const [basicPercent, setBasicPercent] = useState(40);
   const [bonus, setBonus] = useState(0);
   const [regime, setRegime] = useState<Regime>("new");
-  const basic = ctc * basicPercent / 100;
-  const employerPf = Math.min(basic * 0.12, 21600) * 12;
+  const safeCtc = Math.max(0, Math.min(ctc, 100000000));
+  const safeBasicPercent = Math.max(1, Math.min(basicPercent, 100));
+  const safeBonus = Math.max(0, Math.min(bonus, safeCtc));
+  const basic = safeCtc * safeBasicPercent / 100;
+  const employerPf = Math.min(basic * 0.12, 21600);
   const gratuity = basic * 0.0481;
-  const gross = Math.max(0, ctc - employerPf - gratuity - bonus);
-  const employeePf = Math.min(basic * 0.12, 21600) * 12;
+  const gross = Math.max(0, safeCtc - employerPf - gratuity - safeBonus);
+  const employeePf = Math.min(basic * 0.12, 21600);
   const professionalTax = 2400;
   const incomeTax = calculateTax(gross, regime);
   const annualTakeHome = gross - employeePf - professionalTax - incomeTax;
   const rows = [["Annual CTC", ctc], ["Gross salary", gross], ["Employee PF", -employeePf], ["Professional tax", -professionalTax], ["Income tax", -incomeTax]];
 
-  return <section className="calculator-wrap" id="calculator" aria-labelledby="calculator-title"><div className="calculator-intro"><p className="section-kicker">Your numbers, made clear</p><h2 id="calculator-title">Calculate your in-hand salary.</h2><p>Enter the numbers from your offer letter. We’ll estimate what reaches your bank account each month.</p><p className="disclaimer">Estimates use FY 2025–26 Indian tax slabs. Actual payroll can vary by state, deductions, exemptions, and employer policy.</p></div><div className="calculator-card"><div className="calculator-card-heading"><div><p className="card-label">Salary inputs</p><p>Adjust the assumptions to match your offer.</p></div><span className="live-pill"><i /> Live estimate</span></div><div className="input-grid"><label>Annual CTC<input type="number" min="0" step="10000" value={ctc} onChange={(event) => setCtc(Number(event.target.value))} /><small>₹ per year</small></label><label>Basic salary<input type="number" min="1" max="100" value={basicPercent} onChange={(event) => setBasicPercent(Number(event.target.value))} /><small>% of CTC</small></label><label>Annual bonus<input type="number" min="0" step="5000" value={bonus} onChange={(event) => setBonus(Number(event.target.value))} /><small>₹ included in CTC</small></label><label>Tax regime<select value={regime} onChange={(event) => setRegime(event.target.value as Regime)}><option value="new">New regime</option><option value="old">Old regime</option></select><small>FY 2025–26</small></label></div><div className="take-home"><p>Estimated monthly in-hand</p><strong>{formatINR(annualTakeHome / 12)}</strong><span>{formatINR(annualTakeHome)} per year</span></div><div className="salary-breakup"><h3>Estimated salary breakup</h3>{rows.map(([label, value]) => <div key={label as string}><span>{label}</span><strong className={(value as number) < 0 ? "deduction" : ""}>{(value as number) < 0 ? "− " : ""}{formatINR(Math.abs(value as number))}</strong></div>)}</div></div></section>;
+  return <section className="calculator-wrap" id="calculator" aria-labelledby="calculator-title"><div className="calculator-intro"><p className="section-kicker">Your numbers, made clear</p><h2 id="calculator-title">Calculate your in-hand salary.</h2><p>Enter the numbers from your offer letter. We’ll estimate what reaches your bank account each month.</p><p className="disclaimer">Estimates use FY 2025–26 Indian tax slabs. Actual payroll can vary by state, deductions, exemptions, and employer policy.</p></div><div className="calculator-card"><div className="calculator-card-heading"><div><p className="card-label">Salary inputs</p><p>Adjust the assumptions to match your offer.</p></div><span className="live-pill"><i /> Live estimate</span></div><div className="input-grid"><label>Annual CTC<input type="number" min="0" max="100000000" step="10000" value={ctc} onChange={(event) => setCtc(Math.min(Number(event.target.value) || 0, 100000000))} /><small>₹ per year · up to ₹10 crore</small></label><label>Basic salary<input type="number" min="1" max="100" value={basicPercent} onChange={(event) => setBasicPercent(Math.max(1, Math.min(Number(event.target.value) || 1, 100)))} /><small>% of CTC</small></label><label>Annual bonus<input type="number" min="0" max={safeCtc} step="5000" value={bonus} onChange={(event) => setBonus(Math.max(0, Math.min(Number(event.target.value) || 0, safeCtc)))} /><small>₹ included in CTC</small></label><label>Tax regime<select value={regime} onChange={(event) => setRegime(event.target.value as Regime)}><option value="new">New regime</option><option value="old">Old regime</option></select><small>FY 2025–26</small></label></div><div className="take-home"><p>Estimated monthly in-hand</p><strong>{formatINR(annualTakeHome / 12)}</strong><span>{formatINR(annualTakeHome)} per year</span></div>{incomeTax === 0 && <p className="tax-status"><span>✓</span> No income tax estimated at this income level. PF and professional tax can still apply.</p>}<div className="salary-breakup"><h3>Estimated salary breakup</h3>{rows.map(([label, value]) => <div key={label as string}><span>{label}</span><strong className={(value as number) < 0 ? "deduction" : ""}>{(value as number) < 0 ? "− " : ""}{formatINR(Math.abs(value as number))}</strong></div>)}</div></div></section>;
 }
