@@ -1,9 +1,19 @@
+import ProductSearch from "./product-search";
+import SiteHeader from "./site-header";
+import { products } from "./products";
+
 export default function Home() {
   return (
     <main>
-      <p className="eyebrow">testdeploy</p>
-      <h1>Simple by design.-added env-added google key</h1>
-      <p className="intro">A tiny Next.js app, ready for Cloudflare.</p>
+      <SiteHeader />
+      <section className="catalog-hero">
+        <div>
+          <p className="eyebrow">Objects for the considered home</p>
+          <h1>Useful things, made to last.</h1>
+        </div>
+        <p className="intro">A small collection of well-made goods for desks, kitchens, rooms, and the spaces between.</p>
+      </section>
+      <ProductSearch products={products} />
     </main>
   );
 }
