@@ -1,19 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root { color-scheme: light; font-family: 'DM Sans', sans-serif; background: #edf3ff; color: #10233f; }
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(#d5e2fa 1px, transparent 1px) 0 0 / 22px 22px, #edf3ff; }
+a { color: inherit; text-decoration: none; }
+main { max-width: 80rem; margin: 0 auto; padding: 1.25rem 3.5rem 4rem; }
+.site-header { display: flex; align-items: center; min-height: 3.5rem; border-bottom: 1px solid #c8d6ee; }
+.brand { color: #174b9a; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; }
+.brand i { color: #0a8e78; font-style: normal; }
+.main-nav { display: flex; gap: 2rem; margin-left: auto; margin-right: 2rem; color: #5c6f8c; font-size: 0.8rem; }
+.main-nav a:hover, .text-link:hover { color: #174b9a; }
+.header-cta { border-radius: 0.4rem; background: #174b9a; color: #fff; padding: 0.7rem 1rem; font-size: 0.75rem; font-weight: 600; }
+.header-cta span { margin-left: 0.45rem; color: #b9f5e5; }
+.catalog-hero { display: flex; justify-content: space-between; align-items: end; gap: 2rem; padding: 4.5rem 0 2.8rem; }
+.eyebrow, .section-kicker { margin: 0 0 0.85rem; color: #e05d47; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 10ch; margin-bottom: 0; color: #10233f; font-family: 'Space Grotesk', sans-serif; font-size: 5.2rem; font-weight: 600; letter-spacing: -0.04em; line-height: 0.94; }
+.intro { max-width: 19rem; margin: 0 0 0.35rem; color: #5c6f8c; font-size: 0.95rem; line-height: 1.6; }
+.benefit-strip { display: flex; gap: 2.5rem; border-top: 1px solid #c8d6ee; border-bottom: 1px solid #c8d6ee; padding: 0.75rem 0; color: #5c6f8c; font-size: 0.72rem; }
+.benefit-strip b { margin-right: 0.5rem; color: #0a8e78; font-weight: 700; }
+.calculator-wrap { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 4rem; align-items: start; padding-top: 2.5rem; }
+.calculator-intro h2 { max-width: 9ch; margin-bottom: 1rem; color: #174b9a; font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+.calculator-intro > p:not(.section-kicker):not(.disclaimer) { max-width: 20rem; color: #5c6f8c; font-size: 0.9rem; line-height: 1.6; }
+.disclaimer { max-width: 20rem; margin-top: 2.5rem; color: #8495ad; font-size: 0.7rem; line-height: 1.5; }
+.calculator-card { border: 1px solid #b9cbea; border-radius: 0.9rem; background: #fff; padding: 1.6rem; box-shadow: 0 1rem 2.5rem rgba(23, 75, 154, 0.1); }
+.calculator-card-heading { display: flex; justify-content: space-between; align-items: start; gap: 1rem; margin-bottom: 1.4rem; }
+.card-label { margin: 0 0 0.3rem; color: #10233f; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; }
+.calculator-card-heading p:last-child { margin: 0; color: #8495ad; font-size: 0.75rem; }
+.live-pill { display: flex; align-items: center; gap: 0.4rem; border: 1px solid #b9eadf; border-radius: 999px; background: #effcf8; padding: 0.35rem 0.6rem; color: #087764; font-size: 0.68rem; white-space: nowrap; }
+.live-pill i { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: #0a8e78; }
+.input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.input-grid label { color: #5c6f8c; font-size: 0.72rem; font-weight: 600; }
+.input-grid input, .input-grid select { display: block; width: 100%; border: 1px solid #c8d6ee; border-radius: 0.35rem; background: #f7faff; color: #10233f; margin-top: 0.4rem; padding: 0.7rem; font: inherit; outline: none; }
+.input-grid input:focus, .input-grid select:focus { border-color: #174b9a; box-shadow: 0 0 0 3px #dce8ff; }
+.input-grid small { display: block; margin-top: 0.3rem; color: #8495ad; font-size: 0.65rem; font-weight: 400; }
+.take-home { margin: 1.5rem 0; border-radius: 0.6rem; background: #174b9a; padding: 1.2rem 1.4rem; }
+.take-home p, .take-home span { display: block; margin: 0; color: #cfe0ff; font-size: 0.72rem; }
+.take-home strong { display: block; margin: 0.25rem 0; color: #b9f5e5; font-family: 'Space Grotesk', sans-serif; font-size: 3.3rem; font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+.salary-breakup h3 { margin-bottom: 0.5rem; color: #10233f; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.salary-breakup > div { display: flex; justify-content: space-between; border-top: 1px solid #e2e9f5; padding: 0.6rem 0; color: #5c6f8c; font-size: 0.78rem; }
+.salary-breakup strong { color: #10233f; font-weight: 600; }
+.salary-breakup .deduction { color: #e05d47; }
+.text-page { max-width: 62rem; padding: 6rem 0 4rem; }
+.text-page h1 { max-width: 11ch; }
+.page-lede { max-width: 32rem; margin: 2rem 0 5rem; color: #5c6f8c; font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; line-height: 1.4; }
+.tax-table, .guide-list, .brand-list { border-top: 1px solid #c8d6ee; }
+.tax-table { max-width: 42rem; margin-bottom: 2rem; }
+.tax-table h2, .guide-list h2 { margin: 1.4rem 0; color: #174b9a; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 600; }
+.tax-table > div { display: flex; justify-content: space-between; border-top: 1px solid #c8d6ee; padding: 0.85rem 0; color: #5c6f8c; }
+.tax-table strong { color: #0a8e78; }
+.note-box { max-width: 42rem; margin-bottom: 2rem; border-left: 4px solid #e05d47; background: #fff5f1; padding: 1rem 1.2rem; }
+.note-box strong { color: #e05d47; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.note-box p { margin: 0.5rem 0 0; color: #5c6f8c; font-size: 0.82rem; line-height: 1.5; }
+.text-link { color: #174b9a; font-size: 0.82rem; font-weight: 600; }
+.guide-list { display: grid; grid-template-columns: 1fr 1fr; }
+.guide-list article { display: grid; grid-template-columns: 2rem 1fr; gap: 0.8rem; border-bottom: 1px solid #c8d6ee; padding: 1.5rem 1rem 1.5rem 0; }
+.guide-list article > span { color: #e05d47; font-size: 0.7rem; font-weight: 700; }
+.guide-list article h2 { margin: 0; font-size: 1.15rem; }
+.guide-list article p { margin: 0.7rem 0 0; color: #5c6f8c; font-size: 0.82rem; line-height: 1.6; }
+.about-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 42rem; margin-left: auto; }
+.about-copy p { color: #5c6f8c; font-size: 0.95rem; line-height: 1.7; }
+@media (min-width: 701px) { .home-page { height: 100svh; overflow: hidden; } .home-page .catalog-hero { padding-top: 3.5rem; padding-bottom: 2rem; } .home-page .calculator-wrap { padding-top: 1.7rem; } .home-page .disclaimer { margin-top: 1.5rem; } }
+@media (max-width: 700px) { main { padding: 1rem 1.25rem 3rem; } .site-header { min-height: 3rem; } .brand { font-size: 0.7rem; } .main-nav { gap: 0.8rem; margin-left: auto; margin-right: 0.7rem; font-size: 0.68rem; } .header-cta { display: none; } .catalog-hero { display: block; padding: 3.5rem 0 2rem; } h1 { max-width: 10ch; font-size: 3.5rem; } .catalog-hero .intro { margin-top: 1.5rem; } .benefit-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; } .calculator-wrap { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; } .calculator-intro h2 { font-size: 2.1rem; } .calculator-card { padding: 1.1rem; } .calculator-card-heading { display: block; } .live-pill { display: inline-flex; margin-top: 0.8rem; } .take-home strong { font-size: 2.75rem; } .text-page { padding-top: 4rem; } .page-lede { margin-bottom: 3rem; } .guide-list { grid-template-columns: 1fr; } .about-copy { display: block; margin-left: 0; } }
+/* Legacy shoe theme retained below.
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500;600&display=swap');
 
 :root { color-scheme: light; font-family: 'DM Sans', sans-serif; background: #f5f1ea; color: #20201e; }
 * { box-sizing: border-box; }
 body { margin: 0; }
-main { max-width: 78rem; margin: 0 auto; padding: 1.5rem 3rem 5rem; }
+main { max-width: 80rem; margin: 0 auto; padding: 1.5rem 3.5rem 5rem; }
 a { color: inherit; text-decoration: none; }
 .site-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #d8d0c4; padding: 0.8rem 0 1.2rem; }
 .brand, .cart-link, .eyebrow, .section-kicker, .product-category { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
 .brand { font-weight: 500; }
 .cart-link { color: #a34e2c; }
 .cart-link span { color: #777067; }
-.catalog-hero { display: flex; justify-content: space-between; align-items: end; gap: 2rem; padding: 8rem 0 7rem; }
+.main-nav { display: flex; gap: 2rem; margin-left: auto; margin-right: 3rem; color: #6d675f; font-size: 0.8rem; }
+.main-nav a:hover, .brand-link:hover, .back-link:hover { color: #a34e2c; }
+.header-cta { border: 1px solid #a34e2c; color: #a34e2c; padding: 0.65rem 0.9rem; font-size: 0.75rem; }
+.header-cta span { margin-left: 0.5rem; }
+.catalog-hero { display: flex; justify-content: space-between; align-items: end; gap: 2rem; padding: 6rem 0 4.5rem; }
 .eyebrow, .section-kicker { color: #a34e2c; margin: 0 0 1.2rem; }
 h1, h2, h3, p { margin-top: 0; }
-h1 { max-width: 9ch; margin-bottom: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(3.7rem, 8vw, 7.5rem); font-weight: 500; line-height: 0.92; letter-spacing: 0; }
+h1 { max-width: 9ch; margin-bottom: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 5.8rem; font-weight: 500; line-height: 0.92; letter-spacing: 0; }
 .intro { max-width: 20rem; margin-bottom: 0.4rem; color: #6d675f; font-size: 1.05rem; line-height: 1.55; }
 .catalog-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; border-top: 1px solid #d8d0c4; padding-top: 1.5rem; }
 .catalog-heading h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; font-weight: 500; }
@@ -23,7 +91,7 @@ input { width: 15rem; border: 0; border-bottom: 1px solid #9c9388; background: t
 .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2rem; }
 .product-card { display: block; }
 .product-art, .detail-art, .cart-art { display: grid; place-items: center; color: #f5f1ea; font-family: 'Playfair Display', Georgia, serif; }
-.product-art { aspect-ratio: 1 / 1.18; font-size: 5rem; transition: transform 200ms ease; }
+.product-art { aspect-ratio: 1 / 1.18; background-position: center; background-size: cover; font-size: 5rem; transition: transform 200ms ease; }
 .product-card:hover .product-art { transform: translateY(-0.35rem); }
 .product-card-copy { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1rem; }
 .product-category { color: #a34e2c; margin: 0 0 0.35rem; font-size: 0.65rem; }
@@ -32,11 +100,14 @@ input { width: 15rem; border: 0; border-bottom: 1px solid #9c9388; background: t
 .product-description { max-width: 17rem; margin: 0.6rem 0 0; color: #777067; font-size: 0.85rem; line-height: 1.45; }
 .back-link { display: inline-block; margin: 3rem 0; color: #a34e2c; font-size: 0.85rem; }
 .product-detail { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr); gap: 7rem; align-items: center; max-width: 65rem; margin: 1rem auto; }
-.detail-art { aspect-ratio: 1 / 1; font-size: 10rem; }
+.detail-art { aspect-ratio: 1 / 1; background-position: center; background-size: cover; font-size: 10rem; }
 .detail-copy h1, .cart-page h1 { max-width: none; margin-bottom: 2rem; font-size: clamp(3.5rem, 7vw, 6rem); }
 .detail-description { font-family: 'Playfair Display', Georgia, serif; font-size: 1.7rem; line-height: 1.3; }
 .detail-info { max-width: 25rem; color: #6d675f; line-height: 1.6; }
+.verdict { display: grid; gap: 0.4rem; max-width: 25rem; border-left: 2px solid #a34e2c; padding-left: 1rem; color: #6d675f; line-height: 1.5; }
+.verdict strong { color: #20201e; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
 .detail-buy { display: flex; align-items: center; gap: 2rem; margin-top: 3rem; font-size: 1.2rem; }
+.brand-link { color: #a34e2c; font-size: 0.8rem; }
 button { cursor: pointer; font: inherit; }
 .add-button, .checkout-button { border: 0; background: #a34e2c; color: #fffaf3; padding: 1rem 1.4rem; }
 .cart-page { padding-top: 7rem; }
@@ -55,29 +126,55 @@ button { cursor: pointer; font: inherit; }
 .empty-cart { border-top: 1px solid #d8d0c4; padding-top: 2rem; color: #6d675f; }
 .text-link { color: #a34e2c; text-decoration: underline; text-underline-offset: 0.3rem; }
 .empty-state { padding: 3rem 0; color: #777067; }
-@media (max-width: 700px) { main { padding: 1rem 1.25rem 4rem; } .catalog-hero { display: block; padding: 5rem 0; } .catalog-hero .intro { margin-top: 2rem; } .catalog-heading { display: block; } .search-label { display: block; margin-top: 2rem; } input { width: 100%; } .product-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 0.8rem; } .product-art { font-size: 3rem; } .product-detail, .cart-layout { grid-template-columns: 1fr; gap: 2rem; } .detail-art { font-size: 7rem; } .cart-page { padding-top: 4rem; } .cart-layout { gap: 3rem; } }
-
-.eyebrow {
-  margin: 0 0 1rem;
-  color: #a34e2c;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-h1 {
-  max-width: 10ch;
-  margin: 0;
-  font-size: clamp(3.5rem, 12vw, 7rem);
-  font-weight: 400;
-  line-height: 0.9;
-}
-
-.intro {
-  max-width: 24rem;
-  margin: 2rem 0 0;
-  color: #66615a;
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
+.benefit-strip { display: flex; gap: 3rem; border-top: 1px solid #d8d0c4; border-bottom: 1px solid #d8d0c4; padding: 1rem 0; color: #777067; font-size: 0.75rem; }
+.benefit-strip b { margin-right: 0.5rem; color: #a34e2c; font-weight: 500; }
+.calculator-wrap { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 5rem; align-items: start; padding-top: 5rem; }
+.calculator-intro h2 { max-width: 10ch; margin-bottom: 1.5rem; font-family: 'Playfair Display', Georgia, serif; font-size: 3rem; font-weight: 500; line-height: 1; }
+.calculator-intro > p:not(.section-kicker):not(.disclaimer) { max-width: 22rem; color: #6d675f; line-height: 1.6; }
+.disclaimer { max-width: 22rem; margin-top: 5rem; color: #8c8377; font-size: 0.72rem; line-height: 1.5; }
+.calculator-card { background: #20201e; color: #f5f1ea; padding: 2.2rem; box-shadow: 0 1.5rem 3rem rgba(32, 32, 30, 0.12); }
+.calculator-card-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: start; margin-bottom: 2rem; }
+.card-label { margin: 0 0 0.35rem; color: #f5f1ea; font-size: 0.95rem; }
+.calculator-card-heading p:last-child { margin: 0; color: #8c8377; font-size: 0.78rem; }
+.live-pill { display: flex; align-items: center; gap: 0.45rem; border: 1px solid #625d57; border-radius: 999px; padding: 0.35rem 0.6rem; color: #c7bfb3; font-size: 0.68rem; white-space: nowrap; }
+.live-pill i { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: #91b879; }
+.input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 1rem; }
+.input-grid label { color: #c7bfb3; font-size: 0.75rem; }
+.input-grid input, .input-grid select { display: block; width: 100%; border: 1px solid #625d57; color: #f5f1ea; margin-top: 0.5rem; padding: 0.75rem; font: inherit; outline: none; }
+.input-grid input { border-bottom: 1px solid #625d57; background: #2a2926; }
+.input-grid input:focus, .input-grid select:focus { border-color: #f0a35c; box-shadow: 0 0 0 2px rgba(240, 163, 92, 0.18); }
+.input-grid select { background: #20201e; }
+.input-grid small { display: block; margin-top: 0.35rem; color: #8c8377; }
+.take-home { margin: 3rem 0; border-top: 1px solid #625d57; border-bottom: 1px solid #625d57; padding: 1.7rem 0; }
+.take-home p, .take-home span { display: block; margin: 0; color: #c7bfb3; font-size: 0.75rem; }
+.take-home strong { display: block; margin: 0.4rem 0; color: #f0a35c; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2.8rem, 6vw, 4.8rem); font-weight: 500; line-height: 1; }
+.salary-breakup h3 { margin-bottom: 1rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.salary-breakup > div { display: flex; justify-content: space-between; border-top: 1px solid #3e3c39; padding: 0.8rem 0; color: #c7bfb3; font-size: 0.85rem; }
+.salary-breakup strong { color: #f5f1ea; font-weight: 500; }
+.salary-breakup .deduction { color: #f0a35c; }
+.tax-table { max-width: 42rem; margin-bottom: 3rem; border-top: 1px solid #d8d0c4; }
+.tax-table h2 { margin: 1.5rem 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.7rem; font-weight: 500; }
+.tax-table > div { display: flex; justify-content: space-between; border-top: 1px solid #d8d0c4; padding: 1rem 0; color: #6d675f; }
+.tax-table strong { color: #a34e2c; }
+.note-box { max-width: 42rem; margin-bottom: 2.5rem; background: #e8dfd2; padding: 1.3rem; }
+.note-box strong { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.note-box p { max-width: 34rem; margin: 0.7rem 0 0; color: #6d675f; font-size: 0.85rem; line-height: 1.5; }
+.editor-note { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; max-width: 45rem; margin: 0 0 8rem auto; border-top: 1px solid #d8d0c4; padding-top: 1.2rem; }
+.editor-note p:last-child { max-width: 30rem; font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; line-height: 1.35; }
+.text-page { max-width: 62rem; padding: 8rem 0 4rem; }
+.text-page h1 { max-width: 11ch; }
+.page-lede { max-width: 32rem; margin: 3rem 0 7rem; color: #6d675f; font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; line-height: 1.4; }
+.brand-list { border-top: 1px solid #d8d0c4; }
+.brand-row { display: grid; grid-template-columns: 3rem 1fr 1.3fr auto; gap: 1.5rem; align-items: baseline; border-bottom: 1px solid #d8d0c4; padding: 1.5rem 0; }
+.brand-row > span, .guide-list article > span { color: #a34e2c; font-size: 0.75rem; }
+.brand-row h2, .guide-list h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 500; }
+.brand-row p, .brand-row a { margin: 0; color: #6d675f; font-size: 0.85rem; line-height: 1.5; }
+.brand-row a { color: #a34e2c; white-space: nowrap; }
+.guide-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid #d8d0c4; }
+.guide-list article { display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; border-bottom: 1px solid #d8d0c4; padding: 2rem 1rem 2rem 0; }
+.guide-list article p { max-width: 22rem; margin: 1rem 0 0; color: #6d675f; font-size: 0.9rem; line-height: 1.6; }
+.about-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 42rem; margin-left: auto; }
+.about-copy p { color: #6d675f; font-size: 1.05rem; line-height: 1.7; }
+@media (max-width: 700px) { main { padding: 1rem 1.25rem 4rem; } .main-nav { gap: 0.8rem; margin-right: 0.8rem; font-size: 0.7rem; } .header-cta { display: none; } .catalog-hero { display: block; padding: 5rem 0; } .catalog-hero .intro { margin-top: 2rem; } .catalog-heading { display: block; } .search-label { display: block; margin-top: 2rem; } input { width: 100%; } .product-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 0.8rem; } .product-art { font-size: 3rem; } .product-detail, .cart-layout, .calculator-wrap { grid-template-columns: 1fr; gap: 2rem; } .detail-art { font-size: 7rem; } .detail-buy { flex-wrap: wrap; gap: 1rem; } .cart-page { padding-top: 4rem; } .cart-layout { gap: 3rem; } .editor-note, .about-copy { display: block; margin-bottom: 5rem; } .editor-note p:last-child { margin-top: 2rem; } .text-page { padding-top: 5rem; } .page-lede { margin-bottom: 4rem; } .brand-row { grid-template-columns: 2rem 1fr; gap: 0.8rem; } .brand-row p, .brand-row a { grid-column: 2; } .guide-list { grid-template-columns: 1fr; } .calculator-wrap { padding-top: 1rem; } .disclaimer { margin-top: 2rem; } .calculator-card { padding: 1.2rem; } }
+@media (max-width: 700px) { h1 { max-width: 10ch; font-size: 3.5rem; } .main-nav { margin-left: auto; } .brand { font-size: 0.65rem; } .benefit-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; padding: 1rem 0; } .calculator-card-heading { display: block; } .live-pill { display: inline-flex; margin-top: 1rem; } .input-grid { gap: 1rem 0.7rem; } .take-home strong { font-size: 3rem; } }
+*/

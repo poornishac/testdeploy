@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { CartProvider } from "./cart-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "testdeploy",
-  description: "A minimal Next.js app running on Cloudflare.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://testdeploy.example.com"),
+  title: { default: "Take Home India | Salary Calculator", template: "%s | Take Home India" },
+  description: "Calculate your monthly in-hand salary in India from CTC. Compare the new and old income tax regimes with a clear salary breakup.",
+  keywords: ["salary calculator India", "take home salary", "in hand salary calculator", "CTC to in hand", "income tax calculator"],
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Take Home India | Salary Calculator",
+    description: "Know what lands in your bank account every month.",
+    type: "website",
+    siteName: "Sole Standard"
+  },
   verification: {
     google: "nVG2ShDMTHf_d84Rba2MWFntJLp0wLGN6QHHqBjZAF8"
   }
@@ -17,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body><CartProvider>{children}</CartProvider></body>
+      <body>{children}</body>
     </html>
   );
 }

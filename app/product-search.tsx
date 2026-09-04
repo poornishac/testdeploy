@@ -21,8 +21,8 @@ export default function ProductSearch({ products }: { products: Product[] }) {
     <section className="catalog" aria-labelledby="catalog-title">
       <div className="catalog-heading">
         <div>
-          <p className="section-kicker">The collection</p>
-          <h2 id="catalog-title">Objects for everyday rituals.</h2>
+          <p className="section-kicker">The shortlist</p>
+          <h2 id="catalog-title">Five pairs worth knowing.</h2>
         </div>
         <label className="search-label">
           <span>Search products</span>
@@ -30,7 +30,7 @@ export default function ProductSearch({ products }: { products: Product[] }) {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Try “mug”"
+            placeholder="Try “trail”"
           />
         </label>
       </div>
@@ -38,12 +38,10 @@ export default function ProductSearch({ products }: { products: Product[] }) {
         <div className="product-grid">
           {filteredProducts.map((product) => (
             <Link className="product-card" href={`/products/${product.slug}`} key={product.slug}>
-              <div className="product-art" style={{ backgroundColor: product.accent }} aria-hidden="true">
-                <span>{product.name.slice(0, 1)}</span>
-              </div>
+              <div className="product-art" style={{ backgroundImage: `url(${product.image})`, backgroundColor: product.accent }} role="img" aria-label={`${product.brand} ${product.name}`} />
               <div className="product-card-copy">
                 <div>
-                  <p className="product-category">{product.category}</p>
+                  <p className="product-category">{product.brand} / {product.category}</p>
                   <h3>{product.name}</h3>
                 </div>
                 <p className="price">${product.price}</p>
